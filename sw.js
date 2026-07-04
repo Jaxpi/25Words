@@ -1,13 +1,15 @@
-const CACHE_NAME = 'words-game-v2'; 
+const CACHE_NAME = 'words-game-v3'; // Bumping the version clears out old browser broken caches
 const ASSETS = [
   './',
   './index.html',
   './style.css',
   './script.js',
-  './manifest.json'
+  './manifest.json',
+  './assets/icon192.png',
+  './assets/icon512.png'
 ];
 
-// Precache core assets on install - Will not crash because all 5 files exist!
+// Precache core assets on install
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
