@@ -1,14 +1,14 @@
 :root {
     --primary: #4a90e2;
-    --success: #2ecc71;
-    --danger: #e74c3c;
+    --success: #00a900;
+    --danger: #ff1900;
     --dark: #2c3e50;
     --light: #ecf0f1;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--light);
+    background-color: var(--dark);
     color: var(--dark);
     margin: 0;
     display: flex;
@@ -98,7 +98,7 @@ h1 { margin-top: 0; color: var(--primary); }
 
 .btn:hover { opacity: 0.9; }
 #reset-board-btn { background: #7f8c8d; }
-#card-btn { background: #9b59b6; }
+#card-btn { background: #005eff; }
 
 /* Modal Styles */
 .modal {
@@ -134,4 +134,17 @@ h1 { margin-top: 0; color: var(--primary); }
     line-height: 2;
     margin: 20px auto;
     width: fit-content;
+}
+
+/* Timer State Colors */
+.timer-box.running {
+    background-color: var(--success) !important;
+}
+
+.timer-box.paused {
+    background-color: #f39c12 !important; /* Amber / Orange color */
+}
+
+.timer-box.times-up {
+    background-color: var(--danger) !important;
 }

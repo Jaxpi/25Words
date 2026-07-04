@@ -137,16 +137,29 @@ function shuffleArray(array) {
 }
 
 // --- TIMER FUNCTIONS (TAP, PAUSE, HOLD TO RESET) ---
+// --- TIMER FUNCTIONS (TAP, PAUSE, HOLD TO RESET) ---
+function updateTimerClass(statusClass) {
+    // Remove all state classes first
+    timerEl.classList.remove('running', 'paused', 'times-up');
+    // Add the active status class if one is specified
+    if (statusClass) {
+        timerEl.classList.add(statusClass);
+    }
+}
+
 function startTimer() {
     if (isTimerRunning) return;
     isTimerRunning = true;
+    updateTimerClass('running');
+    
     timerInterval = setInterval(() => {
         timeLeft--;
         timerEl.textContent = timeLeft;
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
             isTimerRunning = false;
-            timerEl.textContent = "TIME!";
+            timerEl.textContent = "TIME";
+            updateTimerClass('times-up');
         }
     }, 1000);
 }
@@ -154,6 +167,7 @@ function startTimer() {
 function pauseTimer() {
     clearInterval(timerInterval);
     isTimerRunning = false;
+    updateTimerClass('paused');
 }
 
 function resetTimer() {
@@ -161,6 +175,7 @@ function resetTimer() {
     isTimerRunning = false;
     timeLeft = defaultTime;
     timerEl.textContent = timeLeft;
+    updateTimerClass(null); // Reverts back to your default background
 }
 
 function handleTimerTouchStart(e) {
