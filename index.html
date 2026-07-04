@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25 Words or Less Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>25 Words or Less</h1>
+
+        <!-- Timer Section -->
+        <div id="timer" class="timer-box">45</div>
+
+        <!-- Setup Section -->
+        <div class="setup-container">
+            <label for="wager-input">Wager Limit (1-25): </label>
+            <input type="number" id="wager-input" min="1" max="25" value="25">
+            <button id="generate-grid-btn">Set Grid</button>
+        </div>
+
+        <!-- Grid Board -->
+        <div id="grid-board" class="grid-container"></div>
+
+        <!-- Control Buttons -->
+        <div class="controls">
+            <button id="reset-board-btn" class="btn">Reset Board Only</button>
+            <button id="card-btn" class="btn card-trigger">View Word Card</button>
+        </div>
+    </div>
+
+    <!-- Modal for Word Cards -->
+    <div id="card-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Your 5 Secret Words</h2>
+            <ol id="word-list"></ol>
+            <button id="next-card-btn" class="btn">Next Card</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
