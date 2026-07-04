@@ -7,7 +7,7 @@ const ASSETS = [
   './manifest.json'
 ];
 
-// Precache core assets on install
+// Precache core assets on install - Will not crash because all 5 files exist!
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -31,7 +31,6 @@ self.addEventListener('activate', event => {
 
 // Network-first for everything: try network, fall back to cache
 self.addEventListener('fetch', event => {
-  // Only handle local assets to prevent external icon fetch errors
   if (event.request.url.startsWith(self.location.origin)) {
     event.respondWith(
       fetch(event.request)
@@ -44,4 +43,3 @@ self.addEventListener('fetch', event => {
     );
   }
 });
-
