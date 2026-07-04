@@ -2,7 +2,7 @@
   "name": "25 Words or Less",
   "short_name": "25 Words",
   "description": "Simplified party board game with wager grids and word cards.",
-  "start_url": "./index.html",
+  "start_url": "./index.html", 
   "display": "standalone",
   "background_color": "#ecf0f1",
   "theme_color": "#4a90e2",
