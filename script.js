@@ -1,112 +1,91 @@
-// --- 1,500+ WORD POOL ---
+// --- 1,500+ SIMPLE WORD POOL ---
 const rawWordPool = [
-    // Nouns
-    "Apple","Banana","Orange","Grapes","Melon","Peach","Cherry","Lemon","Lime","Berry","Plum","Mango","Papaya","Guitar","Violin",
-    "Drums","Piano","Flute","Trumpet","Harp","Cello","Saxophone","Clarinet","Banjos","Robot","Cyborg","Android","Engine","Battery",
-    "Magnet","Sensor","Laser","Radar","Rocket","Missile","Satellite","Astronaut","Cosmonaut","Meteor","Comet","Asteroid","Galaxy",
-    "Universe","Cosmos","Nebula","Orbit","Gravity","Planet","Star","Sun","Moon","Earth","Mars","Jupiter","Saturn","Uranus","Neptune",
-    "Pluto","Mercury","Venus","Vulcan","Phoenix","Dragon","Griffin","Unicorn","Pegasus","Centaur","Minotaur","Siren","Kraken","Hydra",
-    "Gorgon","Medusa","Sphinx","Chimera","Wyvern","Basilisk","Cerberus","Anubis","Osiris","Horus","Isis","Zeus","Hera","Poseidon",
-    "Hades","Athena","Apollo","Artemis","Ares","Aphrodite","Hermes","Dionysus","Odin","Thor","Loki","Freya","Frigg","Baldur","Tyr",
-    "Heimdall","Hel","Fenrir","Jormungand","Valkyrie","Einherjar","Asgard","Midgard","Jotunheim","Niflheim","Muspelheim","Helheim",
-    "Valhalla","Castle","Palace","Mansion","Villa","Cottage","Cabin","Chalet","Hut","Tent","Tepee","Igloo","Yurt","Wigwam","Hogan",
-    "Longhouse","Pueblo","Adobe","Kraal","Rondavel","Tulou","Trullo","Ger","Bothy","Shanty","Shack","Lean-to","Treehouse","Houseboat",
-    "Caravan","Camper","Trailer","Motorhome","RV","Bus","Coach","Train","Tram","Trolley","Subway","Metro","Monorail","Cablecar",
-    "Funicular","Gondola","Ski-lift","Chairlift","Elevator","Escalator","Travelator","Walkway","Sidewalk","Pavement","Street","Road",
-    "Avenue","Boulevard","Lane","Drive","Way","Court","Place","Square","Plaza","Terrace","Crescent","Close","Yard","Alley","Passage",
-    "Path","Track","Trail","Route","Highway","Freeway","Motorway","Expressway","Turnpike","Parkway","Byway","Bypass","Ringroad","Flyover",
-    "Overpass","Underpass","Tunnel","Bridge","Viaduct","Aqueduct","Causeway","Culvert","Ford","Ferry","Pier","Jetty","Wharf","Quay",
-    "Marina","Harbor","Port","Dock","Shipyard","Slipway","Breakwater","Mole","Groyne","Sea-wall","Promenade","Esplanade","Beach","Shore",
-    "Coast","Cliff","Cape","Headland","Promontory","Peninsula","Isthmus","Island","Islet","Atoll","Archipelago","Reef","Sandbank","Shoal",
-    "Dune","Delta","Estuary","Firth","Fjord","Sound","Strait","Channel","Bay","Gulf","Bight","Cove","Inlet","Loch","Lake","Pond",
-    "Pool","Tarn","Reservoir","Basin","Lagoon","Swamp","Marsh","Bog","Fen","Mire","Morass","Quagmire","Peatland","Wetland","Mangrove",
-    "River","Stream","Brook","Creek","Rill","Burn","Beck","Torrent","Riverbed","Riverbank","Waterfall","Cascade","Cataract","Rapid","Spring",
-    "Geyser","Source","Tributary","Confluence","Mouth","Valley","Glen","Dale","Vale","Gorge","Canyon","Ravine","Chasm","Abyss","Gulley",
-    "Clough","Strath","Pass","Gap","Col","Saddle","Defile","Mountain","Mount","Peak","Summit","Crest","Ridge","Spur","Butte","Mesa",
-    "Plateau","Tableland","Hill","Knoll","Mound","Tump","Tor","Crag","Pinnacle","Needle","Dome","Volcano","Caldera","Crater","Vent",
-    "Fumarole","Lava-field","Scree","Talus","Moraine","Glacier","Ice-sheet","Ice-cap","Iceberg","Ice-floe","Pack-ice","Sastrugi","Serac",
-    "Crevasse","Bergschrund","Moulin","Glacier-cave","Ice-cave","Cave","Cavern","Grotto","Pothole","Sinkhole","Dolene","Karst","Stalactite",
-    "Stalagmit","Column","Pillar","Curtain","Flowstone","Helictite","Straw","Pool-crystal","Cave-pearl","Fossil","Amber","Petrified-wood",
-    "Dinosaurs","Mammoth","Mastodon","Sabertooth","Megatherium","Glyptodon","Doedicurus","Phorusrhacos","Gastornis","Argentavis",
-    "Pelagornis","Megalodon","Basilosaurus","Livyatan","Dunkleosteus","Helicoprion","Anomalocaris","Opabinia","Hallucigenia","Wiwaxia",
-    "Pikaia","Trilobite","Ammonite","Belemite","Nautilus","Crinoid","Sea-lily","Sea-urchin","Starfish","Brittle-star","Sea-cucumber",
-    "Sand-dollar","Sea-anemone","Coral","Sponge","Jellyfish","Portuguese-man-of-war","Box-jellyfish","Comb-jelly","Sea-walnut",
-    "Venus-girdle","Flatworm","Tapeworm","Fluke","Roundworm","Nematode","Hookworm","Pinworm","Filaria","Earthworm","Lugworm",
-    "Ragworm","Bloodworm","Leech","Tubifex","Snail","Slug","Limpet","Abalone","Conch","Whelk","Cowrie","Cone-snail","Nudibranch",
-    "Sea-slug","Sea-hare","Clam","Cockle","Mussel","Oyster","Scallop","Razor-shell","Shipworm","Octopus","Squid","Cuttlefish",
-    "Chambered-nautilus","Spirula","Vampire-squid","Giant-squid","Colossal-squid","Argonaut","Paper-nautilus","Sea-spider",
-    "Horseshoe-crab","Trilobite-larva","Scorpion","Emperor-scorpion","Whip-scorpion","Wind-scorpion","Pseudoscorpion","Harvestman",
-    "Daddy-longlegs","Tick","Mite","Chigger","Spider","Tarantula","Bird-eating-spider","Wolf-spider","Jumping-spider","Crab-spider",
-    "Orb-weaver","Black-widow","Brown-recluse","Funnel-web","Trapdoor-spider","Water-spider","Lynx-spider","Nursery-web-spider",
-    "Centipede","Millipede","Pill-bug","Woodlouse","Sowbug","Water-flea","Daphnia","Cyclops","Seed-shrimp","Ostracod","Fairy-shrimp",
-    "Brine-shrimp","Tadpole-shrimp","Clam-shrimp","Mantis-shrimp","Pistol-shrimp","Cleaner-shrimp","Krill","Lobster","Spiny-lobster",
-    "Crayfish","Crawfish","Crab","Hermit-crab","King-crab","Spider-crab","Fiddler-crab","Ghost-crab","Blue-crab","Dungeness-crab",
-    "Barnacle","Goose-barnacle","Acorn-barnacle","Silverfish","Firebrat","Bristletail","Mayfly","Dragonfly","Damselfly","Stonefly",
-    "Webspinner","Angel-insect","Earwig","Rock-crawler","Gladiator-insect","Cricket","Grasshopper","Locust","Katydid",
-    "Mole-cricket","Stick-insect","Leaf-insect","Mantid","Praying-mantis","Cockroach","Termite","White-ant","Booklouse","Barklouse",
-    "Chewing-louse","Sucking-louse","Thrips","Cicada","Treehopper","Leafhopper","Froghopper","Spittlebug","Planthopper","Fulgorid",
-    "Scale-insect","Mealybug","Whitefly","Aphid","Plant-louse","Greenfly","Blackfly","Adelgid","Phylloxera","Assassin-bug",
-    "Wheel-bug","Ambush-bug","Bed-bug","Bat-bug","Lace-bug","Stink-bug","Shield-bug","Burrower-bug","Negro-bug","Seed-bug",
-    "Chinch-bug","Leaf-footed-bug","Squash-bug","Boxelder-bug","Firebug","Red-bug","Cotton-stainer","Broad-headed-bug",
-    "Scentless-plant-bug","Toad-bug","Gelastocorid","Water-boatman","Backswimmer","Water-scorpion","Giant-water-bug","Toe-biter",
-    "Creeping-water-bug","Velvety-shore-bug","Water-strider","Pond-skater","Marsh-treader","Water-measurer",
+    // --- SIMPLE NOUNS ---
+    // Animals & Nature
+    "Dog","Cat","Bird","Fish","Lion","Tiger","Bear","Horse","Cow","Pig","Sheep","Duck","Goose","Frog","Snake",
+    "Shark","Whale","Dolphin","Monkey","Rabbit","Deer","Fox","Wolf","Elephant","Giraffe","Zebra","Hippo","Camel",
+    "Spider","Ant","Bee","Fly","Butterfly","Crab","Lobster","Turtle","Mouse","Rat","Bat","Owl","Eagle","Hawk",
+    "Tree","Flower","Grass","Leaf","Root","Seed","Plant","Rose","Tulip","Daisy","Bush","Forest","Jungle","Desert",
+    "Mountain","Hill","Valley","River","Lake","Ocean","Sea","Beach","Sand","Rock","Stone","Mud","Clay","Dirt",
+    "Rain","Snow","Wind","Ice","Sun","Moon","Star","Sky","Cloud","Storm","Thunder","Lightning","Fire","Smoke",
+    
+    // Food & Kitchen
+    "Apple","Banana","Orange","Grape","Lemon","Lime","Peach","Pear","Cherry","Berry","Melon","Mango","Plum",
+    "Tomato","Potato","Carrot","Onion","Garlic","Corn","Pea","Bean","Lettuce","Salad","Soup","Bread","Toast",
+    "Cheese","Butter","Milk","Cream","Yogurt","Egg","Meat","Beef","Chicken","Pork","Fish","Steak","Burger",
+    "Pizza","Pasta","Rice","Noodle","Cake","Pie","Cookie","Candy","Chocolate","Icecream","Sugar","Salt","Pepper",
+    "Water","Juice","Soda","Tea","Coffee","Beer","Wine","Plate","Bowl","Cup","Glass","Mug","Fork","Knife",
+    "Spoon","Pan","Pot","Oven","Stove","Fridge","Toaster","Blender","Sink","Counter","Apron","Timer","Recipe",
 
-    // Verbs
-    "Accept","Achieve","Acquire","Adapt","Add","Adjust","Admire","Advise","Afford","Agree","Alert","Allow","Alter","Amuse",
-    "Analyse","Announce","Annoy","Answer","Anticipate","Apologise","Appear","Applaud","Apply","Appoint","Approve","Argue","Arise",
-    "Arrange","Arrest","Arrive","Ascend","Ask","Assist","Assume","Assure","Astonish","Attach","Attack","Attain","Attempt",
-    "Attend","Attract","Audit","Avoid","Awake","Babble","Back","Bake","Balance","Balk","Ban","Bang","Banish","Banter",
-    "Bare","Bargain","Bark","Bash","Bask","Bate","Bathe","Battle","Bawl","Be","Beam","Bear","Beat","Beautify","Become",
-    "Befall","Beg","Begin","Behave","Behold","Believe","Belong","Bend","Benefit","Bequeathe","Berate","Beseech","Beset",
-    "Besiege","Bestow","Bet","Betray","Better","Beware","Bewilder","Bewitch","Chafe","Chaff","Challenge","Chamber","Champion",
-    "Chance","Change","Chant","Chap","Char","Charge","Charm","Chart","Chase","Chasm","Chastise","Chat","Chatter","Cheapen",
-    "Cheat","Check","Cheer","Cherish","Chew","Chide","Chill","Chime","Chip","Chirp","Chisel","Choke","Chop","Choreograph",
-    "Chuckle","Churn","Cite","Clad","Claim","Clamber","Clamour","Clamp","Clang","Clank","Clap","Clarify","Clash","Clasp",
-    "Class","Classify","Clatter","Claw","Clean","Cleanse","Clear","Cleave","Clench","Click","Climb","Cling","Clink","Clip",
-    "Cloak","Clock","Clog","Cloister","Close","Closet","Clot","Clothe","Cloud","Clout","Clown","Club","Cluck","Clue",
-    "Clump","Cluster","Clutch","Clutter","Coach","Coagulate","Coalesce","Coast","Coat","Coax","Cobble","Cock","Code",
-    "Codify","Coerce","Coexist","Cogitate","Cohere","Coil","Coin","Coincide","Collaborate","Collapse","Collate","Collect",
-    "Colligate","Collide","Collogue","Collude","Colonize","Color","Comb","Combat","Combine","Combust","Come","Comfort",
-    "Command","Commemorate","Commence","Commend","Comment","Commission","Commit","Commix","Commune","Communicate","Commute",
-    "Compact","Companion","Company","Compare","Compartment","Compass","Compel","Compensate","Compete","Compile","Complain",
-    "Complement","Complete","Complicate","Compliment","Comply","Deafened","Debar","Debase","Debate","Debauch","Debilitate",
-    "Debit","Debrief","Debunk","Debut","Decamp","Decant","Decapitate","Decay","Deceive","Decelerate","Decentralize",
-    "Decept","Decide","Decimate","Decipher","Deck","Declaim","Declare","Declassify","Decline","Decoct","Decode","Decommission",
-    "Decompose","Decompress","Decongest","Decontaminate","Decorate","Decouple","Decoy","Decrease","Decree","Decry","Encrypt",
-    "Dedicate","Deduce","Deduct","Deed","Deem","Deepen","Deface","Defalcate","Defame","Defat","Default","Defeat","Defect",
-    "Defend","Defer","Defile","Define","Deflate","Deflect","Deflorate","Defoliate","Deform","Defraud","Defray","Defrock",
-    "Defrost","Defuse","Defy","Degas","Degenerate","Degrade","Degrease","Degust","Dehydrate","Deice","Deify","Deign",
-    "Deject","Delay","Delegate","Delete","Deliberate","Delight","Delimit","Delineate","Delink","Delinquish","Deliquesce",
-    "Deliver","Delocalize","Delude","Deluge","Delve","Demand","Demarcate","Demean","Dement","Demerge","Demilitarize",
+    // Home & Everyday Objects
+    "House","Home","Room","Door","Window","Wall","Floor","Roof","Ceiling","Stairs","Halleway","Porch","Garage",
+    "Bed","Pillow","Blanket","Sheet","Mattress","Couch","Chair","Table","Desk","Stool","Drawer","Shelf","Closet",
+    "Lamp","Light","Bulb","Switch","Plug","Cord","Battery","Phone","Laptop","Computer","Screen","Mouse","Keyboard",
+    "Tv","Radio","Clock","Watch","Mirror","Picture","Frame","Rug","Carpet","Curtain","Blinds","Vase","Plant",
+    "Book","Notebook","Paper","Pen","Pencil","Eraser","Ruler","Marker","Crayon","Glue","Tape","Scissors","Folder",
+    "Bag","Box","Bin","Basket","Bucket","Barrel","Can","Bottle","Jar","Lid","Cap","Key","Lock","Chain",
 
-    // Adjectives
-    "Abundant","Acidic","Acrid","Active","Sharp","Bright","Calm","Crimson","Dazzling","Earnest","Elastic","Elegant","Erratic",
-    "Fierce","Flamboyant","Frail","Frantic","Gargantuan","Glossy","Gothic","Graceful","Grim","Grotesque","Gullible","Hallowed",
-    "Handy","Hardy","Harsh","Hasty","Hazy","Heavy","Hectic","Hefty","Heinous","Herculean","Hermetic","Heroic","Hesitant",
-    "Hideous","High","Hilarious","Hoary","Hollow","Homely","Honest","Honorable","Hopeful","Horizontal","Horrible","Horrific",
-    "Hospitable","Hostile","Hot","Huge","Humble","Humid","Humorous","Hungry","Hurried","Hurtful","Husky","Hydrated","Hygienic",
-    "Hypnotic","Idyllic","Ignoble","Ignorant","Ill","Illegal","Illegible","Illicit","Illiterate","Illuminating","Illusive",
-    "Illustrious","Immaculate","Immature","Immeasurable","Immediate","Immense","Imminent","Immune","Immutable","Impartial",
-    "Impassioned","Impassive","Impatient","Impeccable","Impeded","Imperative","Imperfect","Imperial","Imperious","Impermeable",
-    "Impertinent","Impervious","Impetuous","Impious","Impish","Implacable","Implicit","Implausible","Impolite","Important",
-    "Importunate","Imposing","Impossible","Impotent","Impoverished","Impracticable","Impractical","Imprecise","Impregnable",
-    "Impressive","Improbable","Improper","Improvident","Improvised","Imprudent","Impudent","Impulsive","Impure","Inaccurate",
-    "Inadequate","Inadvertent","Inalienable","Inane","Inanimate","Inapplicable","Inappropriate","Inarticulate","Inaudible",
-    "Inaugural","Inborn","Inbred","Incalculable","Incandescent","Incapable","Incapacitated","Incarcerated","Incautious",
-    "Incendiary","Incensed","Incessant","Inchoate","Incidental","Incinerated","Incipient","Incised","Incisive","Inciteful",
-    "Inclement","Inclined","Includable","Inclusive","Incognito","Incoherent","Incombustible","Income-producing","Incommensurate",
-    "Incommodious","Incommunicable","Incomparable","Incompatible","Incompetent","Incomplete","Incomprehensible","Incompressible",
-    "Inconceivable","Inconclusive","Incongruous","Inconsequential","Inconsiderate","Inconsistent","Inconsolable","Inconspicuous",
-    "Inconstant","Incontestable","Incontrollable","Incontrovertible","Inconvenient","Inconvertible","Incoordinating",
-    "Incorporate","Incorporeal","Incorrect","Incorrigible","Incorruptible","Incrassated","Incredible","Incredulous","Incremental",
-    "Incriminated","Incrusted","Incubated","Inculpable","Incumbent","Incurable","Incurious","Incurved","Indebted","Indecent",
-    "Indecipherable","Indecisive","Indefatigable","Indefeasible","Indefenbible","Indefinable","Indefinite","Indelible",
-    "Indelicate","Indemnified","Indentable","Indented","Independent","Indescribable","Indestructible","Indeterminable",
-    "Indeterminate","Indextrous","Indicative","Indictable","Indifferent","Indigenous","Indigent","Indigestible","Indignant",
-    "Indirect","Indiscernible","Indiscreet","Indiscrete","Indiscriminate","Indispensable","Indisposed","Indisputable",
-    "Indissoluble","Indistinct","Indistinguishable","Individual","Individualistic","Indivisible","Indocile","Indolent",
-    "Indomitable","Indoor","Indorsee","Indubitable","Inductive","Indulgent","Indurated","Industrial","Industrious","Inedible",
-    "Ineffable","Ineffaceable","Ineffective","Ineffectual","Inefficacious","Inefficient","Inelastic","Inelegant","Ineligible"
+    // Clothing & Personal Items
+    "Shirt","Tshirt","Pants","Jeans","Shorts","Skirt","Dress","Suit","Coat","Jacket","Sweater","Hoodie","Vest",
+    "Socks","Shoes","Boots","Sneakers","Sandals","Slippers","Hat","Cap","Beanie","Helmet","Gloves","Mittens",
+    "Scarf","Belt","Tie","Watch","Ring","Necklace","Bracelet","Earring","Glasses","Sunglasses","Wallet","Purse",
+    "Backpack","Suitcase","Umbrella","Comb","Brush","Toothbrush","Soap","Shampoo","Towel","Razor","Makeup","Perfume",
+
+    // Vehicles & Travel
+    "Car","Truck","Van","Bus","Taxi","Ambulance","Firetruck","Policecar","Jeep","Suv","Bike","Bicycle","Motorcycle",
+    "Scooter","Skateboard","Train","Subway","Metro","Tram","Airplane","Plane","Jet","Helicopter","Rocket","Spaceship",
+    "Boat","Ship","Yacht","Ferry","Canoe","Kayak","Submarine","Raft","Sail","Anchor","Wheel","Tire","Engine",
+    "Brake","Steering","Window","Seat","Belt","Door","Trunk","Hood","Gas","Fuel","Station","Road","Street",
+
+    // Places & Buildings
+    "City","Town","Village","Country","State","Island","World","Planet","Earth","Space","Store","Shop","Market",
+    "Mall","Supermarket","Bakery","Cafe","Restaurant","Hotel","Motel","Inn","Bank","Office","Factory","School",
+    "College","University","Library","Museum","Zoo","Park","Garden","Playground","Yard","Pool","Gym","Stadium",
+    "Theater","Cinema","Church","Temple","Hospital","Clinic","Pharmacy","Postoffice","Station","Airport","Harbor",
+    "Castle","Tower","Bridge","Tunnel","Highway","Path","Trail","Sidewalk","Corner","Square","Plaza","Farm",
+
+    // People & Occupations
+    "Man","Woman","Boy","Girl","Baby","Child","Kid","Teen","Adult","Parent","Mother","Mom","Father","Dad",
+    "Brother","Sister","Son","Daughter","Baby","Grandma","Grandpa","Uncle","Aunt","Cousin","Friend","Neighbor",
+    "Doctor","Nurse","Dentist","Teacher","Coach","Student","Boss","Worker","Police","Firefighter","Pilot","Driver",
+    "Chef","Cook","Waiter","Baker","Farmer","Fisherman","Builder","Painter","Artist","Actor","Singer","Dancer",
+    "Writer","Poet","Lawyer","Judge","King","Queen","Prince","Princess","Hero","Villain","Ghost","Witch",
+
+    // --- SIMPLE VERBS ---
+    "Walk","Run","Jump","Hop","Skip","Dance","Sing","Talk","Speak","Say","Tell","Ask","Answer","Shout",
+    "Whisper","Laugh","Cry","Smile","Frown","Blink","Wink","Look","See","Watch","Stare","Glance","Hear","Listen",
+    "Smell","Sniff","Taste","Bite","Chew","Swallow","Eat","Drink","Sip","Gulp","Cook","Bake","Fry","Boil",
+    "Wash","Clean","Wipe","Scrub","Sweep","Mop","Dust","Vacuum","Polish","Fix","Mend","Repair","Build","Make",
+    "Create","Paint","Draw","Write","Read","Spell","Count","Math","Learn","Teach","Study","Think","Know","Believe",
+    "Forget","Remember","Understand","Guess","Choose","Pick","Select","Like","Love","Hate","Dislike","Want","Need",
+    "Wish","Hope","Fear","Scare","Frighten","Terrify","Anger","Annoy","Please","Amuse","Excite","Bore","Tire",
+    "Sleep","Wake","Dream","Rest","Sit","Stand","Lie","Lean","Kneel","Bow","Shake","Nod","Wave","Clap",
+    "Snap","Point","Touch","Feel","Hold","Grip","Clutch","Grab","Take","Give","Bring","Carry","Lift","Raise",
+    "Drop","Fall","Throw","Catch","Kick","Punch","Hit","Strike","Push","Pull","Drag","shove","Press","Squeeze",
+    "Open","Close","Lock","Unlock","Tie","Untie","Wrap","Unwrap","Pack","Unpack","Fold","Unfold","Roll","Spin",
+    "Turn","Twist","Bend","Break","Snap","Tear","Rip","Cut","Slice","Chop","Dig","Burry","Plant","Grow",
+    "Water","Feed","Pet","Hug","Kiss","Greet","Meet","Visit","Stay","Leave","Go","Come","Arrive","Depart",
+    "Drive","Ride","Fly","Sail","Swim","Dive","Float","Sink","Fly","Soar","Glide","Slide","Slip","Trip",
+    "Stumble","Hide","Seek","Find","Lose","Search","Hunt","Chase","Follow","Lead","Guide","Show","Hide",
+    "Buy","Sell","Pay","Cost","Spend","Save","Earn","Borrow","Lend","Share","Steal","Rob","Catch","Trap",
+    "Play","Win","Lose","Score","Match","Fight","Argue","Agree","Disagree","Promise","Lie","Cheat","Steal",
+
+    // --- SIMPLE ADJECTIVES ---
+    "Big","Huge","Large","Small","Tiny","Little","Tall","Short","Long","Wide","Narrow","Thick","Thin",
+    "Fat","Skinny","Heavy","Light","Hard","Soft","Smooth","Rough","Sharp","Dull","Flat","Round","Square",
+    "Fast","Quick","Slow","Swift","Rapid","Early","Late","New","Old","Young","Ancient","Modern","Fresh",
+    "Stale","Ripe","Rotten","Good","Bad","Great","Excellent","Wonderful","Terrible","Awful","Nice","Kind",
+    "Mean","Cruel","Sweet","Sour","Bitter","Salty","Spicy","Bland","Hot","Warm","Cold","Cool","Chilly",
+    "Bright","Dark","Light","Dim","Shiny","Dull","Glow","Clean","Dirty","Messy","Neat","Tidy","Pure",
+    "Safe","Dangerous","Scary","Spooky","Fun","Funny","Silly","Serious","Boring","Exciting","Interesting","Loud",
+    "Quiet","Noisy","Silent","Soft","Hard","Strong","Weak","Tough","Fragile","Brave","Coward","Smart",
+    "Clever","Foolish","Stupid","Wise","Rich","Poor","Wealthy","Cheap","Expensive","Costly","Free","Full",
+    "Empty","Heavy","Light","Dry","Wet","Damp","Soaked","Muddy","Dusty","Sandy","Rocky","Hilly",
+    "Sunny","Cloudy","Rainy","Snowy","Windy","Stormy","Foggy","Clear","Beautiful","Pretty","Ugly","Cute",
+    "Happy","Sad","Angry","Mad","Glad","Proud","Shy","Brave","Scared","Afraid","Tired","Sleepy","Awake",
+    "Healthy","Sick","Ill","Hurt","Injured","Weak","Strong","Dead","Alive","Real","Fake","True","False",
+    "Right","Wrong","Correct","Easy","Hard","Difficult","Simple","Complex","Plain","Fancy","Soft","Loud",
+    "Red","Blue","Green","Yellow","Orange","Purple","Pink","Brown","Black","White","Gray","Gold","Silver"
 ];
 
 // --- GAME STATE ---
@@ -115,8 +94,8 @@ let cardGroups = [];
 let currentCardIndex = 0;
 
 let timerInterval = null;
-let timeLeft = 45;
-const defaultTime = 45;
+let timeLeft = 60;
+const defaultTime = 60;
 let isTimerRunning = false;
 
 let holdTimer = null;
